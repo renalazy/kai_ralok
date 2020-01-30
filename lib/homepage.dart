@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kai_ralok/dinasan.dart';
 import 'package:kai_ralok/profile.dart';
 
 void main() {
@@ -66,23 +67,31 @@ class _HomepagePageState extends State<HomepagePage> {
                                 ),
                               ],
                             )),
-                        Container(
-                            margin: EdgeInsets.only(left: 40.0),
-                            height: 40.0,
-                            width: 85.0,
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.transparent),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: Colors.white),
-                            child: Center(
-                              child: Text(
-                                "Dinas",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ))
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DinasanPage()));
+                          },
+                          child: Container(
+                              margin: EdgeInsets.only(left: 40.0),
+                              height: 40.0,
+                              width: 85.0,
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.transparent),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color: Colors.white),
+                              child: Center(
+                                child: Text(
+                                  "Dinas",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              )),
+                        )
                       ],
                     )),
               ),
