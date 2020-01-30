@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kai_ralok/profile.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -269,28 +270,36 @@ class _HomepagePageState extends State<HomepagePage> {
                           ],
                         ),
                       ),
-                      Container(
-                        height: 87.0,
-                        width: 87.0,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          image: DecorationImage(
-                            image: AssetImage("images/id-card-solid.png"),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfilePage()));
+                        },
+                        child: Container(
+                          height: 87.0,
+                          width: 87.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            image: DecorationImage(
+                              image: AssetImage("images/id-card-solid.png"),
+                            ),
+                            color: Colors.white,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                blurRadius:
+                                    20.0, // has the effect of softening the shadow
+                                spreadRadius:
+                                    5.0, // has the effect of extending the shadow
+                                offset: Offset(
+                                  10.0, // horizontal, move right 10
+                                  10.0, // vertical, move down 10
+                                ),
+                              )
+                            ],
                           ),
-                          color: Colors.white,
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey,
-                              blurRadius:
-                                  20.0, // has the effect of softening the shadow
-                              spreadRadius:
-                                  5.0, // has the effect of extending the shadow
-                              offset: Offset(
-                                10.0, // horizontal, move right 10
-                                10.0, // vertical, move down 10
-                              ),
-                            )
-                          ],
                         ),
                       ),
                       Container(
