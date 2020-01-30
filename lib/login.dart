@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kai_ralok/homepage.dart';
 
 void main() {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -108,7 +109,10 @@ class _LoginPageState extends State<LoginPage> {
                 height: 15.0,
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => HomepagePage()));
+                },
                 child: Center(
                   child: Container(
                     height: 40.0,
