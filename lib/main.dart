@@ -4,11 +4,11 @@ import 'package:kai_ralok/boarding.dart';
 import 'dart:async';
 
 void main() {
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((_) {
-    runApp(SplashApp());
-  });
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  runApp(SplashApp());
 }
+
 
 class SplashApp extends StatelessWidget {
   @override
